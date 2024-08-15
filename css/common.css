@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --selected-color: #E1ECC8;
+    --related-color: #F7FFE5;
+    --rowButton-color: #6464fa;
+    --wrong-color: red;
+    --help-color: #F2BE22;
+    --popupBackground-color: rgba(0, 0, 0, 0.5);
+    --popupShadow-color: rgb(242, 190, 34);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--popupBackground-color);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px var(--popupShadow-color);
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+        position: relative;
+        top: -30%;
+
+        width: 100%;
+        height: 50%;
+    }
+}
+
+.popup-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    font-size: 2rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-weight: lighter;
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+}
+
+.twoBtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 25%;
+    width: 100%;
+}
+
+.twoBtns>button {
+    width: 30%;
+    height: 80%;
+    font-size: 1.3rem;
+
+    @media screen and (max-width: 768px) {
+        width: 35%;
+    }
+}
+
+.twoBtns>button:hover {
+    cursor: pointer;
+}
+
+.oneBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    width: 100%;
+}
+
+.oneBtn>button {
+    width: 30%;
+    height: 80%;
+    font-size: 1.3rem;
+
+    @media screen and (max-width: 768px) {
+        width: 35%;
+    }
+}
+
+.oneBtn>button:hover {
+    cursor: pointer;
+}
+
+.positiveBtn {
+    box-sizing: border-box;
+    border: 1px solid #0000ff;
+    background-color: #0000ff;
+    color: #fff;
+}
+
+.positiveBtn:hover {
+    cursor: pointer;
+    border: 1px solid #0000ff;
+    background-color: #fff;
+    color: #0000ff;
+}
+
+.negativeBtn {
+    box-sizing: border-box;
+    border: 1px solid #0000ff;
+    background-color: #fff;
+    color: #0000ff;
+}
+
+.negativeBtn:hover {
+    cursor: pointer;
+    border: 1px solid #0000ff;
+    background-color: #0000ff;
+    color: #fff;
+}
+
+.notActivityBtn {
+    cursor: default;
+    pointer-events: none;
+
+    box-sizing: border-box;
+    border: 1px solid #606061;
+    background-color: #606061;
+    color: #fff;
+}
+
+/* ******* 성공 애니메이션 ******* ↓ */
+
+@keyframes fallingParticle {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: fallingParticle 1s linear forwards;
+}
+
+/* ******* 성공 애니메이션 ******* ↑ */

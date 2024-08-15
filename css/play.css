@@ -1,0 +1,256 @@
+#sudoku-play {
+    display: none;
+}
+
+#sudoku-table {
+    border-collapse: collapse;
+    width: 450px;
+    border: 3px solid black;
+}
+
+#sudoku-table td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#sudoku-table td[data-row="2"],
+#sudoku-table td[data-row="5"] {
+    border-bottom: 3px solid black;
+}
+
+#sudoku-table td[data-col="2"],
+#sudoku-table td[data-col="5"] {
+    border-right: 3px solid black;
+}
+
+#sudoku-table-top {
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sudoku-table-top>button {
+    width: 20%;
+    height: 80%;
+    font-size: 1.2rem;
+    background-color: #fff;
+}
+
+#sudoku-table-top>button:hover {
+    cursor: pointer;
+}
+
+#back {
+    box-sizing: border-box;
+    border: 1px solid grey;
+    color: grey;
+}
+
+#back:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+#submit {
+    box-sizing: border-box;
+    border: 1px solid green;
+    color: green;
+}
+
+#submit:hover {
+    background-color: green;
+    color: #fff;
+}
+
+#sudoku-table-bottom {
+    height: 20vh;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#sudoku-table-bottom .row-1,
+#sudoku-table-bottom .row-2 {
+    display: flex;
+    align-items: center;
+    height: 50%;
+}
+
+.row-1>button {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.row-1>button>span {
+    margin: auto 0;
+}
+
+.row-1 button,
+.row-2 button {
+    border: none;
+    background-color: #fff;
+}
+
+.row-2>button {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    height: 100%;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+#note>span {
+    position: relative;
+}
+
+#note span p {
+    position: absolute;
+    top: 0;
+    left: 110%;
+}
+
+#sudoku-table-bottom button {
+    cursor: pointer;
+}
+
+.fixed {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#sudoku-table td.related {
+    background-color: var(--related-color);
+}
+
+/*
+td.selected -> td에 selected가 붙은 것
+td .selected -> td 아래 selected가 붙은 것
+*/
+#sudoku-table td.selected {
+    background-color: var(--selected-color);
+}
+
+/* 마우스가 텍스트 입력 형태로 바뀌는 것 방지 */
+#sudoku-table td {
+    cursor: default;
+}
+
+/* css 선택자 우선순위 때문에 앞에 #sudoku-table을 붙인다 */
+#sudoku-table td:hover:not(.fixed),
+#sudoku-table td.related:hover:not(.fixed) {
+    background-color: var(--selected-color);
+    cursor: pointer;
+}
+
+/* ** */
+@keyframes blinkWrong {
+    0% {
+        background-color: var(--wrong-color);
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: var(--wrong-color);
+    }
+}
+
+.blink-wrong {
+    /* forward: 애니메이션 종료 후 애니메이션의 마지막 프레임이 나타나게 */
+    animation: blinkWrong 0.3s 2;
+}
+
+/* ** */
+
+/* ** */
+@keyframes blinkHelp {
+    0% {
+        background-color: var(--help-color);
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: var(--help-color);
+    }
+}
+
+.blink-help {
+    /* forward: 애니메이션 종료 후 애니메이션의 마지막 프레임이 나타나게 */
+    animation: blinkHelp 0.3s 2;
+}
+
+/* ** */
+
+/* ** */
+@keyframes blinkRowButton {
+    from {
+        background-color: var(--rowButton-color);
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+.blink-rowButton {
+    /* forward: 애니메이션 종료 후 애니메이션의 마지막 프레임이 나타나게 */
+    animation: blinkRowButton 0.5s forwards;
+}
+
+/* ** */
+
+/* note */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+
+    color: var(--rowButton-color);
+}
+
+.notes-grid span {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.notes-grid span.active {
+    opacity: 1;
+    /* 활성화된 메모는 불투명하게 */
+}
+
+/* note */
+
+#confirmPopup {
+    display: none;
+}
+
+#confirmPopup-content {
+    position: relative;
+
+    height: 30%;
+    gap: 10px;
+}
+
+#alert-btn {
+    display: none;
+}

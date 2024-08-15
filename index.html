@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sudoku</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/play.css">
+</head>
+
+<body>
+    <div id="sudoku-main">
+        <section>
+            <div id="screen">
+                SUDOKU
+            </div>
+            <a id="resume" class="positiveBtn notActivityBtn">
+                Resume
+            </a>
+            <a id="newGame" class="positiveBtn">
+                New Game
+            </a>
+            <a id="exit" class="negativeBtn">
+                Exit
+            </a>
+        </section>
+    </div>
+
+    <div id="sudoku-play">
+        <section>
+            <div id="sudoku-table-top">
+                <button id="back">back</button>
+                <button id="submit">submit</button>
+            </div>
+            <table id="sudoku-table">
+                <tbody>
+                </tbody>
+            </table>
+            <div id="sudoku-table-bottom">
+                <div class="row-1">
+                    <button id="help">
+                        <span>
+                            <img src='icon/help.png'>
+                        </span>
+                        <div>
+                            Help x <span id="helpLimit">0</span>
+                        </div>
+                    </button>
+
+                    <button id="undo">
+                        <span>
+                            <img src='icon/undo.png'>
+                        </span>
+                        <div>
+                            Undo
+                        </div>
+                    </button>
+
+                    <button id="erase">
+                        <span>
+                            <img src='icon/erase.png'>
+                        </span>
+                        <div>
+                            Erase
+                        </div>
+                    </button>
+
+                    <button id="note">
+                        <span>
+                            <img src='icon/note_no.png'>
+                            <p>OFF</p>
+                        </span>
+                        <div>
+                            Note
+                        </div>
+                    </button>
+                </div>
+
+                <div class="row-2">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="difficultyPopup" class="popup-background">
+        <div id='difficultyPopup-content' class="popup-content">
+            <p id='difficultyPopupTitle' class="popup-title">Choose difficulty</p>
+            <div id="difficulty-btns">
+                <button class="difficulty" data-difficulty="easy">Easy</button>
+                <button class="difficulty" data-difficulty="normal">Normal</button>
+                <!-- <button class="difficulty" data-difficulty="hard">Hard</button> -->
+            </div>
+            <div id="choose-btns" class="twoBtns">
+                <button id="difficultyPopup-choose" class="positiveBtn">Choose</button>
+                <button id="difficultyPopup-cancel" class="negativeBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div id="confirmPopup" class="popup-background">
+        <div id="confirmPopup-content" class="popup-content">
+            <p id="confirmPopupTitle" class="popup-title"></p>
+            <div id="confirm-btns" class="twoBtns">
+                <button id="confirmPopup-confirm" class="positiveBtn">Confirm</button>
+                <button id="confirmPopup-cancel" class="negativeBtn">Cancel</button>
+            </div>
+            <div id="alert-btn" class="oneBtn">
+                <button id="confirmPopup-ok" class="positiveBtn">OK</button>
+            </div>
+        </div>
+    </div>
+    <script type='module' src="./build/play.js"></script>
+</body>
+
+</html>

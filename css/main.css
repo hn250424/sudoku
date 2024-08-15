@@ -1,0 +1,86 @@
+
+#sudoku-main {
+    display: flex;
+}
+
+#sudoku-main>section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#screen {
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+section>a {
+    width: 300px;
+    height: 70px;
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#difficultyPopup {
+    display: none;
+}
+
+#difficultyPopup-content {
+    gap: 10px;
+}
+
+#difficultyPopupTitle {
+    height: 25%;
+}
+
+#difficulty-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    font-weight: bold;
+}
+
+#difficulty-btns>button {
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
+}
+
+#difficulty-btns>.difficulty {
+    width: 90%;
+    height: 30%;
+    font-size: 1.5rem;
+
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
+
+#difficulty-btns>.difficulty:hover {
+    cursor: pointer;
+    border: 1px double green;
+    background-color: green;
+    color: #fff;
+}
+
+#choose-btns>button {
+    height: 60%;
+}
+
+#difficulty-btns>.selected-difficulty {
+    background-color: green;
+    color: #fff;
+}

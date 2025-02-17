@@ -1,8 +1,4 @@
-import { create2DEmptyArray, shuffleArray, getRandomNumber, copyBoard } from "./func.js";
-import { Position } from "./position.js";
-
-export class SudokuGenerator {
-
+export default class SudokuGenerator {
     private readonly SIZE: number = 9;
     private board: number[][] = create2DEmptyArray(this.SIZE);
 
@@ -266,4 +262,38 @@ export class SudokuGenerator {
         if (this.subgrid[d][num] === 1) return false;
         return true;
     }
+}
+
+class Position {
+    public x: number;
+    public y: number;
+
+    constructor(x: number, y: number){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+// 배열 초기화.
+function create2DEmptyArray(size: number): number[][] {
+    return Array.from({ length: size }, () => Array(size).fill(0));
+}
+
+// Fisher-Yates shuffle.
+function shuffleArray<T>(arr: T[]): void {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const index = Math.floor(Math.random() * (i + 1)); // 0부터 i까지의 난수 인덱스 생성
+        const temp = arr[index];
+        arr[index] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+// 주어진 범위 내에서 랜덤한 숫자 생성.
+function getRandomNumber(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function copyBoard(board: number[][]): number[][] {
+    return board.map(row => [...row]);
 }

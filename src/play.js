@@ -121,7 +121,7 @@ const rowButtonColor = getComputedStyle(document.documentElement).getPropertyVal
 let history = [];
 let helpLimit = 3;
 
-import { SudokuGenerator } from "./sudoku-generator/SudokuGenerator.js";
+import SudokuGenerator from "./SudokuGenerator.js";
 function getSudokuData() {
     const data = new SudokuGenerator().generate(selectedDifficulty);
     gData = data;
